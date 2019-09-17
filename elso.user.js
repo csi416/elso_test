@@ -11,7 +11,7 @@
     'use strict';
   
     // Your code here...
-    alert("indexet olvasol dikmáhe?!");
+    alert("indexet olvasol");
   
 })();
 
