@@ -7,4 +7,11 @@
 // @grant       none
 // ==/UserScript==
 
-alert("indexet olvasol dikmáhe?!");
+(function() {
+    'use strict';
+  
+    // Your code here...
+    alert("indexet olvasol dikmáhe?!");
+  
+})();
+
