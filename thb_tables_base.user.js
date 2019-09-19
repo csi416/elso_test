@@ -57,3 +57,79 @@ for (var i = 1; i < tr.length; i++) {
     tr[i].insertBefore(newTD3, tr[i].children[4]);
     tr[i].insertBefore(newTD4, tr[i].children[10]);
 }
+
+/*
+main();
+
+function main(){
+	// table id="league-table"
+	var leagueTable = document.getElementById("league_table");
+	// tbody, alap tabla, header + csapatok, 1+10 sor
+	var tbody = leagueTable.children[0].children[2].children[0].children[0].children[0];
+	// tr, alap tabla header, Pos, Team, Ctr, stb...
+	var tr0 = tbody.children[0];
+	
+	// osszes meccs kiszamitasa egyszer itt eleg, elso sor alapjan
+	var win = parseInt(tbody.children[1].children[4].innerHTML);
+	var draw = parseInt(tbody.children[1].children[5].innerHTML);
+	var loss = parseInt(tbody.children[1].children[6].innerHTML);
+	var games = win + draw + loss;
+	
+	CreateGamesAndDiffHeaders(tr0);
+	
+	FillGamesAndDiffs(tbody, games);
+	
+}
+
+function CreateGamesHeader(tr0) {
+	CreateHeader("G", 30, 4, tr0);
+}
+function CreateDiffHeader(tr0) {
+	CreateHeader("Diff", 40, 10, tr0);
+}
+function CreateHeader(header_text, width, pos, tr0){
+	var b = document.createElement("b");
+	b.innerHTML = header_text;
+	var td = document.createElement("td");
+	td.setAttribute("width", width);
+	td.setAttribute("valign", "middle");
+	td.setAttribute("bgcolor", "#cdcdcd");
+	td.setAttribute("align", "center");
+	td.setAttribute("style", "border: 1px solid #000000;");
+	td.appendChild(b);
+	tr0.insertBefore(td, tr0.children[pos]);
+}
+function CreateGamesAndDiffHeaders(tr0) {
+	CreateGamesHeader(tr0);
+	CreateDiffHeader(tr0);
+}
+
+function FillGames(tr_i, games){
+	CreateFill(tr_i, games, 30, 4);
+}
+function FillDiffs(tr_i, diff){
+	CreateFill(tr_i, diff, 40, 10);
+}
+function CreateFill(tr_i, innerHTML, width, pos){
+	var td = document.createElement("td");
+	td.setAttribute("width", width);
+	td.setAttribute("valign", "middle");//
+	td.setAttribute("align", "center");//
+	td.innerHTML = innerHTML;
+	tr_i.insertBefore(td, tr_i.children[pos]);
+}
+function FillGamesAndDiffs(tbody, games){
+	for (i = 1; i < tbody.children.length; i++) {
+		
+		var tr_i = tbody.children[i];
+		
+		FillGames(tr_i, games);
+		
+		// golkulonbseg kiszamitasa minden sorban kulon
+		var gf = parseInt(tr_i.children[8].innerHTML);
+		var ga = parseInt(tr_i.children[9].innerHTML);
+		var diff = gf - ga;
+		
+		FillDiffs(tr_i, diff);
+	}
+}*/
