@@ -288,7 +288,7 @@ function SetOther() {
 	var minSm = 13 - Sm;
 	if (minSm < 0) minSm = 0;
   
-  var minAg_new = 13 - Ag;
+  	var minAg_new = 13 - Ag;
 	if (minAg_new < 0) minAg_new = 0;
 	
 	var minSp_new = 13 - Sp;
@@ -305,7 +305,7 @@ function SetOther() {
 	
 	var minPhis = minAg + minSp + minSt + minJu + minSm;
 	//var maxPhis = maxAg + maxSp + maxSt + maxJu;
-  var nyuggerPhis = minAg_new + minSp_new + minSt_new + minJu_new + minSm_new;
+  	var nyuggerPhis = minAg_new + minSp_new + minSt_new + minJu_new + minSm_new;
 	var s1 = talent_skills.toString();
 	var s2 = minPhis.toString();
 	var s3 = nyuggerPhis.toString();
@@ -320,25 +320,35 @@ function SetOther() {
 	//var age=document.getElementById("home_wrapper").children[0].children[2].children[0].children[0].children[0].children[1].children[0].children[0].children[2].children[0].innerHTML.substring(0, 2);
 	var y = 0;
 	if (Age < 28) {
+		// without this year
 		y = 27 - Age + 2.9;
 	}
 	if (Age == 28) {
+		// average
 		//y = 0.4 + 0.8 + 0.6 + 0.4 + 0.2; // = 2.4;
-    y = 0.9 + 0.8 + 0.6 + 0.4 + 0.2; // = 2.4;
+		// width this year
+    		y = 0.9 + 0.8 + 0.6 + 0.4 + 0.2; // = 2.4;
 	}
 	if (Age == 29) {
+		// average
 		//y = 0.4 + 0.6 + 0.4 + 0.2;
-    y = 0.8 + 0.6 + 0.4 + 0.2;
+		// width this year
+    		y = 0.8 + 0.6 + 0.4 + 0.2;
 	}
 	if (Age == 30) {
+		// average
 		//y = 0.3 + 0.4 + 0.2;
-    y = 0.4 + 0.2;
+		// width this year
+    		y = 0.4 + 0.2;
 	}
 	if (Age == 31) {
+		// average
 		//y = 0.2 + 0.2;
-    y = 0.2;
+		// width this year
+    		y = 0.2;
 	}
 	if (Age == 32) {
+		// width this year
 		y = 0.2;
 	}
 	y*=19;
@@ -346,18 +356,24 @@ function SetOther() {
 	//korrigáció sérülés és training focus miatt
 	var from_training = Math.round(((parseInt(WE) + 50) * y) / 100);
 //endregion
-
+	var sum_of_all_skills = parseInt(Bc) + parseInt(Pa) + parseInt(Sh) + parseInt(Ob) + parseInt(Tq) + parseInt(Pm) + 
+	    parseInt(Bl) + parseInt(Ma) + parseInt(Oo) + parseInt(Re) + parseInt(Ag) + parseInt(Sp) + 
+	    parseInt(St) + parseInt(Ju) + parseInt(Sm);
 	
 	var td_SetOther01 = CreateTd1("Need to max talent", "#edeae1");
 	var td_SetOther02 = CreateTd2(need_to_max_talent, "#e8e6d4");
 	//var td_SetOther03 = CreateTd1("Fromtraining(+-5)", "#edeae1");
-  var td_SetOther03 = CreateTd1("From training", "#edeae1");
+  	var td_SetOther03 = CreateTd1("From training", "#edeae1");
 	var td_SetOther04 = CreateTd2(from_training, "#e8e6d4");
+  	var td_SetOther05 = CreateTd1("Sum of all skills", "#edeae1");
+	var td_SetOther06 = CreateTd2(sum_of_all_skills, "#e8e6d4");
 	var tr_dummy = document.createElement("tr");
 	tr_dummy.appendChild(td_SetOther01);
 	tr_dummy.appendChild(td_SetOther02);
 	tr_dummy.appendChild(td_SetOther03);
 	tr_dummy.appendChild(td_SetOther04);
+	tr_dummy.appendChild(td_SetOther05);
+	tr_dummy.appendChild(td_SetOther06);
 	tr_profile.insertBefore(tr_dummy, tr_profile.children[9]);
 	
 }
