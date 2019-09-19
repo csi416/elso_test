@@ -60,18 +60,25 @@
 
     function ModifyTable(tr) {
         for (var i = 1; i < tr.length; i++) {
+            // number of wins
             var w = parseInt(tr[i].children[4].innerHTML);
+            // number of draws
             var d = parseInt(tr[i].children[5].innerHTML);
+            // number of loss
             var l = parseInt(tr[i].children[6].innerHTML);
+            // number of all games
             var g = w + d +l;
             var newTD3 = document.createElement("td");
             newTD3.setAttribute("width", "30");
             newTD3.setAttribute("valign", "middle");
             newTD3.setAttribute("align", "center");
             newTD3.innerHTML = g;
-
+            
+            // number of goals forward
             var gf = parseInt(tr[i].children[7].innerHTML);
+            // number of goals against
             var ga = parseInt(tr[i].children[8].innerHTML);
+            // goal difference
             var dif = gf - ga;
             var newTD4 = document.createElement("td");
             newTD4.setAttribute("width", "40");
